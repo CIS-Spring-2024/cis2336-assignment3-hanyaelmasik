@@ -1,0 +1,221 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #d4d4d4;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #d4d4d4;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+header {
+  margin: 30px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 10px solid #e71c1c;
+}
+
+header > h1 {
+  color: #e71c1c;
+  margin: 20px 0px;
+  font-size: 26pt;
+}
+
+@media screen and (min-width: 1520px) {
+
+  header > h1 {
+    font-size: 36pt;
+  }
+
+  header > p {
+    max-width: 50%;
+  }
+}
+
+.type {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 0px 30px;
+}
+
+.type > h2 {
+  border-bottom: 2px solid red;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 450px) {
+  .type > h2 {
+    font-size: 30pt;
+  }
+}
+
+.appetizer-items-div, .main-items-div, .desserts-items-div {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
+}
+
+@media screen and (min-width: 450px) {
+  .appetizer-items-div, .main-items-div, .desserts-items-div {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 2px;
+  padding: 10px;
+  margin: 20px;
+  display: flex;
+  animation-name: slideIn;
+  animation-duration: 0.5s;
+  transition: box-shadow 0.5s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+.card > img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+}
+
+@media screen and (min-width: 450px) {
+  .card > div {
+    padding: 0px 0px 0px 10px;
+  }
+}
+
+.card > div > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.card > div > div > span {
+  margin-top: 10px;
+  color: #e71c1c;
+}
+
+.card > div > div > button {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 5px 0px;
+}
+
+@media screen and (min-width: 450px) {
+  .card > div > div > button {
+    max-width: 200px;
+  }
+}
+
+footer {
+  margin-top: 50px;
+  padding: 10px;
+  background-color: wheat;
+  display: flex;
+  align-items: center;
+  justify-content: center;;
+}
+
+/* order classes */
+
+.order {
+  width: 50%;
+  display: flex;
+  margin: 20px auto;
+  padding: 5px;
+  border: 2px dotted black;
+}
+
+.order-div {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  margin: auto auto;
+}
+
+.order-div > button {
+  margin: 5px;
+  padding: 10px;
+  color: white;
+  font-weight: 800;
+}
+
+#place-order {
+  background-color: green;
+}
+
+#cancel-order {
+  background-color: red;
+}
+
+.your-cart {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.your-cart > h2 {
+  color: red;
+  border-bottom: 1px solid red;
+  margin: 20px 0px;
+}
+
+.cart-item {
+  display: flex;
+}
+
+.cart-item > h4, span {
+  margin: 5px;
+}
+
+.total-price {
+  font-weight: 600;
+}
